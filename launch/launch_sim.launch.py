@@ -43,23 +43,29 @@ def generate_launch_description(): # Fixed the space typo here
     executable='parameter_bridge',
     arguments=[
         # Lidar (GZ to ROS)
-        '/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan',
+        '/model/my_bot/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan',
         # Odometry (GZ to ROS)
         '/odom@nav_msgs/msg/Odometry@gz.msgs.Odometry',
-        
+        # cmd_vel (ROS to GZ)
         '/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist',
-
         # Clock (Essential for Rviz to synchronize)
         '/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock',
         # TF (Transforms - crucial for Rviz movement)
-        '/tf@tf2_msgs/msg/TFMessage@gz.msgs.Pose_V',
+        '/model/my_bot/tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V',
         # Joint States (For wheel movement)
-        '/joint_states@sensor_msgs/msg/JointState[gz.msgs.Model',
+        '/joint_states@sensor_msgs/msg/JointState@gz.msgs.Model',
         # Camera topics...
         '/camera/image@sensor_msgs/msg/Image[gz.msgs.Image',
         '/camera/depth_image@sensor_msgs/msg/Image[gz.msgs.Image',
         '/camera/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked',
         '/camera/camera_info@sensor_msgs/msg/CameraInfo[gz.msgs.CameraInfo'],
+    
+    remappings=[
+        # Remap gz-sim namespaced topics to what ROS nodes expect
+        ('/model/my_bot/odometry', '/odom'),
+        ('/model/my_bot/tf', '/tf'),
+    ],
+    
     output='screen'
 )
 
