@@ -34,3 +34,8 @@ The robot can autonomously navigate, avoid obstacles, and build maps of its envi
 - ✅ **ROS 2 Jazzy Compatibility**: Fully compatible with ROS 2 Jazzy distribution
 - ✅ **RViz Visualization**: Visualize sensor data and robot state
 - ✅ **Modular Design**: Easily extensible for additional features
+
+## Documentation
+<img width="1028" height="911" alt="Screenshot from 2026-04-12 18-33-11" src="https://github.com/user-attachments/assets/6ce5430e-361f-45ab-8aeb-26d2002f5d79" />
+<img width="1228" height="912" alt="Screenshot from 2026-04-12 18-33-09" src="https://github.com/user-attachments/assets/f9f42793-5934-4105-a451-37929c88f726" />
+
