@@ -28,6 +28,21 @@ def generate_launch_description(): # Fixed the space typo here
             launch_arguments={'gz_args': f'-r {world_file_path}'}.items()    
     )
 
+    slam_params = os.path.join(
+        get_package_share_directory(package_name),
+        'config',
+        'mapper_params_online_async.yaml'
+    )
+
+    slam_toolbox_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([os.path.join(
+            get_package_share_directory('slam_toolbox'), 'launch', 'online_async_launch.py')]),
+        launch_arguments={
+            'slam_params_file': slam_params,
+            'use_sim_time': 'true',
+        }.items()
+    )
+
     # 3. The New Spawner (Updated executable and arguments)
     spawn_entity = Node(
         package='ros_gz_sim',
@@ -62,6 +77,7 @@ def generate_launch_description(): # Fixed the space typo here
     
     remappings=[
         # Remap gz-sim namespaced topics to what ROS nodes expect
+        ('/model/my_bot/scan', '/scan'),
         ('/model/my_bot/odometry', '/odom'),
         ('/model/my_bot/tf', '/tf'),
     ],
@@ -73,5 +89,6 @@ def generate_launch_description(): # Fixed the space typo here
         rsp,
         gazebo,
         spawn_entity,
-        bridge  # <-- Don't forget to add this!
+        bridge,
+        slam_toolbox_launch
     ])

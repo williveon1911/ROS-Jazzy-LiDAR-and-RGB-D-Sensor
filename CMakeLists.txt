@@ -7,6 +7,13 @@ endif()
 
 find_package(ament_cmake REQUIRED)
 
+# Install Python executable scripts
+install(
+  PROGRAMS
+    lidar_explorer.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 # This section "installs" your folders so ROS can find your files
 install(
   DIRECTORY
