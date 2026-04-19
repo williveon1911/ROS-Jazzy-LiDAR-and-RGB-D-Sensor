@@ -25,9 +25,10 @@
     </link>
 
     <gazebo reference="laser_frame">
-        <sensor name="laser" type="gpu_lidar"> 
+        <sensor name="laser" type="lidar">
             <pose> 0 0 0 0 0 0 </pose>
             <visualize>true</visualize>
+            <always_on>true</always_on>
             <update_rate>10</update_rate>
             <lidar>
                 <scan>
