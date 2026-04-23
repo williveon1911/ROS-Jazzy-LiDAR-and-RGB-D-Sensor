@@ -25,7 +25,7 @@
     </link>
 
     <gazebo reference="laser_frame">
-        <sensor name="laser" type="lidar">
+        <sensor name="laser" type="gpu_lidar">
             <pose> 0 0 0 0 0 0 </pose>
             <visualize>true</visualize>
             <always_on>true</always_on>
@@ -43,7 +43,8 @@
                     <max>10.0</max>
                 </range>
             </lidar>
-            <topic>scan</topic>
+            <topic>/model/my_bot/scan</topic>
+            <gz_frame_id>laser_frame</gz_frame_id>
         </sensor>
     </gazebo>
 
