@@ -38,4 +38,5 @@ The robot can autonomously navigate, avoid obstacles, and build maps of its envi
 ## Documentation
 <img width="1028" height="911" alt="Screenshot from 2026-04-12 18-33-11" src="https://github.com/user-attachments/assets/6ce5430e-361f-45ab-8aeb-26d2002f5d79" />
 <img width="1228" height="912" alt="Screenshot from 2026-04-12 18-33-09" src="https://github.com/user-attachments/assets/f9f42793-5934-4105-a451-37929c88f726" />
+<img width="1228" height="912" alt="Screenshot from 2026-04-23 20-53-14" src="https://github.com/user-attachments/assets/09de3a14-a07f-4fcb-83e4-87f913d5e34b" />
 
