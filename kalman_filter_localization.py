@@ -45,7 +45,7 @@ import math
 
 import numpy as np
 import rclpy
-from geometry_msgs.msg import PoseWithCovarianceStamped, TwistWithCovarianceStamped
+from geometry_msgs.msg import PoseWithCovarianceStamped, TwistStamped
 from nav_msgs.msg import Odometry
 from rclpy.node import Node
 from sensor_msgs.msg import LaserScan
@@ -162,7 +162,7 @@ class KalmanFilterLocalization(Node):
             10,
         )
         self._vel_pub = self.create_publisher(
-            TwistWithCovarianceStamped,
+            TwistStamped,
             '/estimated_velocity',
             10,
         )
